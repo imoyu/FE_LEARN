@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>html-2</title>
+</head>
+<body>
+
+  <table border="1" cellpadding="10" cellspacing="0" h  width="400">
+    <tr align="center">
+      <th>标题1</th>
+      <th>标题2</th>
+      <th>标题3</th>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td>22</td>
+      <td>33</td>
+    </tr>
+    <tr>
+      <td>111</td>
+      <td>222</td>
+      <td>333</td>
+    </tr>
+  </table>
+
+  <br>
+  <br>
+
+  <table border="3" cellspacing="0" cellpadding="10">
+    <thead><tr>t1</tr><tr>t2</tr><tr>t3</tr><tr>t4</tr></thead>
+    <tbody>
+      <tr><td>qqq1</td><td>qqq2</td><td>qqq3</td><td>qqq4</td></tr>
+      <tr><td>www1</td><td>www2</td><td>www3</td><td>www4</td></tr>
+      <tr><td>eee1</td><td>eee2</td><td>eee3</td><td>eee4</td></tr>
+    </tbody>
+  </table>
+
+  <br>
+  <br>
+<!--合并单元格-->
+
+  <table border="1" cellpadding="10" cellspacing="0" h  width="400">
+    <tr align="center">
+      <th>标题1</th>
+      <th>标题2</th>
+      <th>标题3</th>
+    </tr>
+    <tr>
+      <!--跨列合并两格-->
+      <td colspan="2">1</td>
+      <td>2</td>
+<!--      <td>3</td>-->
+    </tr>
+    <tr>
+      <td rowspan="2">11</td>
+      <td>22</td>
+      <td>33</td>
+    </tr>
+    <tr>
+      <td>111</td>
+      <td>222</td>
+<!--      <td>333</td>-->
+    </tr>
+  </table>
+
+  <br>
+  <br>
+
+<!--列表-->
+<!--无序列表-->
+<ul>
+  <li>列表1 ===</li>
+  <li>列表2 ===</li>
+  <li>列表3 ===</li>
+  <li>列表4 ===</li>
+  <li>列表5 ===</li>
+</ul>
+  <br>
+  <br>
+
+  <!--有序列表-->
+<ol>
+  <li>列表1 ===</li>
+  <li>列表2 ===</li>
+  <li>列表3 ===</li>
+  <li>列表4 ===</li>
+  <li>列表5 ===</li>
+</ol>
+
+<!--自定义列表-->
+<dl>
+  <dt>aaa111</dt>
+  <dd>bbb11大富豪就</dd>
+  <dd>bbb11大富豪就</dd>
+  <dt>aaa222</dt>
+  <dd>bbb22大富豪就</dd>
+  <dd>bbb22大富豪就</dd>
+</dl>
+
+<!--表单-->
+<input type="button" value="按钮1" name="username">
+  <br>
+  <br>
+<input type="radio" value="男" name="sex">男<br>
+<input type="radio" value="女" name="sex" checked="checked">女<br>
+<br>
+<br>
+<input type="text" value="输入文字" name="txt">
+
+<br>
+<br>
+
+  <!--label 标签-->
+  <label for="sex">男</label>
+<input type="radio" value="男" name="sex2" id="sex">
+  <label for="sex2">女</label>
+<input type="radio" value="女" name="sex2" id="sex2">
+
+  <br>
+
+<input type="password">
+
+  <br>
+<input type="reset">
+
+  <br>
+<input type="checkbox">
+  <br>
+<input type="hidden" value="hahaha">
+
+<br>
+<br>
+
+<select>
+  <option>选项1</option>
+  <option>选项2</option>
+  <option selected="selected">选项3</option>
+  <option>选项4</option>
+  <option>选项5</option>
+</select>
+
+  <br>
+  <br>
+
+<textarea rows="5" cols="20">
+  输入文本
+</textarea>
+
+</body>
+</html>
