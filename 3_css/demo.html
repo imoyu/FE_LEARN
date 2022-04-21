@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css-demo</title>
+
+    <style>
+
+        /*1. 标签选择器*/
+        p {
+            color: red;
+            font-size: 20px;
+        }
+
+        /*2. 类选择器*/
+        .red {
+            color: orange;
+        }
+
+        .box {
+            width: 50px;
+            height: 50px;
+        }
+        .color1 {
+            background-color: deeppink;
+            color: white;
+        }
+        .color2 {
+            background-color: greenyellow;
+            color: white;
+        }
+
+        /*3.id 选择器*/
+        #xxx {
+            background-color: orange;
+        }
+
+        /*4. 通配符选择器*/
+        * {
+
+        }
+
+        /*=========================*/
+
+        /*
+        文本属性：
+        */
+
+        #txt-demo {
+
+            /* 字体大小，默认 16px */
+            font-size: 20px;
+
+            font-weight: bold;
+
+            font-style: italic;
+
+            color: aqua;
+
+            text-align: center;
+
+            text-decoration: underline;
+            text-decoration-color: black;
+
+            text-indent: 2em;
+            line-height: 66px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<p>待测试文字1111</p>
+
+<div class="red">我是div</div>
+<div>我是div</div>
+<!-- 行内样式 -->
+<p style="color: blueviolet; font-size: 18px">我是段落</p>
+<ul>
+
+    <li id="txt-demo">我是ul里面小li哦</li>
+</ul>
+<ol>
+
+    <li id="xxx">我是ol里面小li哦</li>
+</ol>
+
+<div class="color1 box">1</div>
+<div class="color2 box">2</div>
+<div class="color1 box">3</div>
+</body>
+</html>
