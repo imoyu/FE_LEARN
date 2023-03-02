@@ -146,6 +146,16 @@ fabric.properties
 
 # End of https://www.toptal.com/developers/gitignore/api/macos,webstorm
 Bottom
-/.idea/active-tab-highlighter.xml
-/.idea/git_toolbox_prj.xml
-!/.idea/
+
+### other ###
+.idea
+*.iml
+*.ipr
+.settings/
+.classpath
+.project
+.gradle
+**/target/**
+**/tgrget
+.factorypath
+**/config/*.yml
