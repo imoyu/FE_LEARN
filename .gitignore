@@ -148,3 +148,4 @@ fabric.properties
 Bottom
 /.idea/active-tab-highlighter.xml
 /.idea/git_toolbox_prj.xml
+!/.idea/
