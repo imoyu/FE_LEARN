@@ -6,15 +6,20 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>外边距合并-嵌套块级元素垂直外边距塌陷</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0
+        }
         .father {
             width: 400px;
             height: 400px;
             background-color: purple;
             margin-top: 50px;
-            /* border: 1px solid red; */
+            /* 3种解决办法：*/
+             border: 0.1px solid red;
             /* border: 1px solid transparent; */
             /* padding: 1px; */
-            overflow: hidden;
+            /*overflow: hidden;*/
         }
         .son {
             width: 200px;
