@@ -17,7 +17,13 @@
     <button id="ldh">刘德华</button>
     <button id="zxy">张学友</button> <br>
     <img src="images/ldh.jpg" alt="" title="刘德华">
-
+    
+    <br/>
+    <button id="bbb">切换</button>
+    <div style="width: 500px;height: 300px">
+        <img src="images/tao.png" alt="" style="height: 100%;width: 100%">
+    </div>
+    
     <script>
         // 修改元素属性  src
         // 1. 获取元素
@@ -33,6 +39,18 @@
             img.src = 'images/ldh.jpg';
             img.title = '刘德华';
         }
+
+        console.log('my ---- ---- ----')
+        let toggle = document.getElementById('bbb');
+        let element = document.querySelector('div img');
+        toggle.onclick = function () {
+            if (element.src.includes('tao')) {
+                element.src = 'images/open.png';
+                return;
+            }
+            element.src = 'images/tao.png';
+        }
+        
     </script>
 </body>
 

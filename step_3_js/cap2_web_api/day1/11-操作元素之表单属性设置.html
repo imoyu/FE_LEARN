@@ -11,6 +11,14 @@
 <body>
     <button>按钮</button>
     <input type="text" value="输入内容">
+    
+    <div></div>
+    <button id="show-time">
+        显示当前时间
+    </button>
+    <label>
+        <input type="text" value="none">
+    </label>
     <script>
         // 1. 获取元素
         var btn = document.querySelector('button');
@@ -24,6 +32,15 @@
             // btn.disabled = true;
             this.disabled = true;
             // this 指向的是事件函数的调用者 btn
+        }
+        
+        let btn2 = document.getElementById('show-time');
+        let input2 = document.getElementsByTagName('input')[1];
+        btn2.onclick = () => {
+            console.log('this:');
+            console.log(this);
+            let now = new Date();
+            input2.value = now.toLocaleString();
         }
     </script>
 </body>

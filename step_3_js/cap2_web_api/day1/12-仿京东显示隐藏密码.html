@@ -27,6 +27,27 @@
             right: 2px;
             width: 24px;
         }
+        
+        .box2 {
+            position: relative;
+            width: 400px;
+            border: 1px solid #cccccc;
+            margin: 0 auto;
+        }
+        
+        .box2 input {
+            width: 370px;
+            height: 30px;
+            border: 0;
+            outline: none;
+        }
+        
+        .box2 img {
+            position: absolute;
+            top: 2px;
+            right: 2px;
+            width: 25px;
+        }
     </style>
 </head>
 
@@ -55,6 +76,29 @@
                 flag = 0;
             }
 
+        }
+        
+    </script>
+    
+    <div class="box2">
+        <label>
+            <input type="password">
+        </label>
+        <img src="images/close.png" alt="">
+    </div>
+    <script>
+        let pwd2 = document.querySelector('.box2 input');
+        let eye2 = document.querySelector('.box2 img');
+        let isClosed = true;
+        eye2.onclick = () => {
+            if (isClosed) {
+                eye2.src = 'images/open.png';
+                pwd2.type = 'text';
+            } else {
+                eye2.src = 'images/close.png';
+                pwd2.type = 'password';
+            }
+            isClosed = !isClosed;
         }
     </script>
 </body>

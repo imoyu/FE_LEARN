@@ -11,15 +11,27 @@
 <body>
     <button id="btn">开关灯</button>
     <script>
-        var btn = document.getElementById('btn');
-        var flag = 0;
-        btn.onclick = function() {
-            if (flag == 0) {
-                document.body.style.backgroundColor = 'black';
-                flag = 1;
+        // var btn = document.getElementById('btn');
+        // var flag = 0;
+        // btn.onclick = function() {
+        //     if (flag == 0) {
+        //         document.body.style.backgroundColor = 'black';
+        //         flag = 1;
+        //     } else {
+        //         document.body.style.backgroundColor = '#fff';
+        //         flag = 0;
+        //     }
+        // }
+        let btn = document.getElementById('btn');
+        let status = 'open';
+        let curColor = document.body.style.backgroundColor;
+        btn.onclick = function () {
+            if (status === 'open') {
+                document.body.style.backgroundColor = 'yellow';
+                status = 'close';
             } else {
-                document.body.style.backgroundColor = '#fff';
-                flag = 0;
+                document.body.style.backgroundColor = curColor;
+                status = 'open';
             }
         }
     </script>

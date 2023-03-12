@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div[class=target] {
+            width: 600px;
+            height: 120px;
+            border: 1px solid black;
+        }
+        
+        /* 取2时，d1下第2个标签不是div的，所以获取不到 */
+        div:nth-child(1) {
+            background-color: #ff8500;
+        }
+    </style>
+</head>
+<body>
+    <div class="target">x</div>
+    <div class="target">y</div>
+    <div id="d1">
+        <div id="d11" class="target">d11</div>
+        <h3>h3</h3>
+        <h3>h3</h3>
+        <div id="d12" class="target">d12</div>
+        <div id="d13" class="target">d13</div>
+    </div>
+    <div id="d2">
+        <div id="d21" class="target">d21</div>
+        <div id="d22" class="target">d22</div>
+    </div>
+    <script>
+        let all = document.querySelectorAll('div:nth-child(1)');
+        for (let e of all) {
+            e.innerText = e.innerText + ' mark..1';
+        }
+        
+        let elementsByTagName = document.getElementsByTagName('div');
+        document.write(elementsByTagName.length);
+    </script>
+</body>
+</html>

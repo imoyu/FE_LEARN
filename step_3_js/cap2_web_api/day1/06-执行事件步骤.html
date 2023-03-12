@@ -23,6 +23,20 @@
 
         }
     </script>
+
+    <div style="height: 100px;width: 200px;background-color: #9bceea"></div>
+    <script>
+        let element = document.querySelector('[style]');
+        element.onfocus = function () {
+            console.log('1111');
+        }
+        element.onblur = function () {
+            console.log('2222');
+        }
+        element.onmousemove = function () {
+            console.log('2222');
+        }
+    </script>
 </body>
 
 </html>
