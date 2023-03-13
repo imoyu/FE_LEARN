@@ -25,7 +25,7 @@
             margin: 100px;
         }
         
-        .nav>li {
+        .nav > li {
             position: relative;
             float: left;
             width: 80px;
@@ -125,15 +125,25 @@
         </li>
     </ul>
     <script>
-        // 1. 获取元素
-        var nav = document.querySelector('.nav');
-        var lis = nav.children; // 得到4个小li
-        // 2.循环注册事件
-        for (var i = 0; i < lis.length; i++) {
-            lis[i].onmouseover = function() {
+        // // 1. 获取元素
+        // var nav = document.querySelector('.nav');
+        // var lis = nav.children; // 得到4个小li
+        // // 2.循环注册事件
+        // for (var i = 0; i < lis.length; i++) {
+        //     lis[i].onmouseover = function() {
+        //         this.children[1].style.display = 'block';
+        //     }
+        //     lis[i].onmouseout = function() {
+        //         this.children[1].style.display = 'none';
+        //     }
+        // }
+
+        let nav = document.querySelector('.nav');
+        for (let child of nav.children) {
+            child.onmouseover = function () {
                 this.children[1].style.display = 'block';
             }
-            lis[i].onmouseout = function() {
+            child.onmouseout = function () {
                 this.children[1].style.display = 'none';
             }
         }

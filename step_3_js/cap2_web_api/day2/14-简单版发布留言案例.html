@@ -29,6 +29,7 @@
         }
         
         li {
+            position: relative;
             width: 300px;
             padding: 5px;
             background-color: rgb(245, 209, 243);
@@ -36,35 +37,61 @@
             font-size: 14px;
             margin: 15px 0;
         }
+        
+        .delete_btn {
+            position: absolute;
+            right: 1px;
+            top: 4px;
+        }
     </style>
 </head>
 
 <body>
     <textarea name="" id=""></textarea>
-    <button>发布</button>
+    <button id="send-btn">发布</button>
     <ul>
 
     </ul>
     <script>
-        // 1. 获取元素
-        var btn = document.querySelector('button');
-        var text = document.querySelector('textarea');
-        var ul = document.querySelector('ul');
-        // 2. 注册事件
-        btn.onclick = function() {
-            if (text.value == '') {
-                alert('您没有输入内容');
-                return false;
-            } else {
-                // console.log(text.value);
-                // (1) 创建元素
-                var li = document.createElement('li');
-                // 先有li 才能赋值
-                li.innerHTML = text.value;
-                // (2) 添加元素
-                // ul.appendChild(li);
-                ul.insertBefore(li, ul.children[0]);
+        // // 1. 获取元素
+        // var btn = document.querySelector('button');
+        // var text = document.querySelector('textarea');
+        // var ul = document.querySelector('ul');
+        // // 2. 注册事件
+        // btn.onclick = function() {
+        //     if (text.value == '') {
+        //         alert('您没有输入内容');
+        //         return false;
+        //     } else {
+        //         // console.log(text.value);
+        //         // (1) 创建元素
+        //         var li = document.createElement('li');
+        //         // 先有li 才能赋值
+        //         li.innerHTML = text.value;
+        //         // (2) 添加元素
+        //         // ul.appendChild(li);
+        //         ul.insertBefore(li, ul.children[0]);
+        //     }
+        // }
+        let sendBtn = document.getElementById('send-btn');
+        let ulElement = document.querySelector('ul');
+        let text = document.querySelector('textarea');
+        
+        console.log('get text');
+        sendBtn.onclick = function () {
+            if (text.value === '') {
+                window.alert('输入内容不能为空');
+                return;
             }
+            let liElement = document.createElement('li');
+            liElement.innerHTML = text.value + '<button class="delete_btn">删除</button>';
+            text.value = '';
+            // js 数组不会越界，取值为 undefined
+            ulElement.insertBefore(liElement, ulElement.children[0]);
+            let btn = document.querySelector('.delete_btn');
+            btn.onclick = function () {
+                this.parentElement.remove();
+            };
         }
     </script>
 </body>
