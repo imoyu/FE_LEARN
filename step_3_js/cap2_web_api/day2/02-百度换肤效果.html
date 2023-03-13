@@ -7,6 +7,37 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
+        /** {*/
+        /*    margin: 0;*/
+        /*    padding: 0;*/
+        /*}*/
+        
+        /*body {*/
+        /*    background: url(images/1.jpg) no-repeat center top;*/
+        /*}*/
+        
+        /*li {*/
+        /*    list-style: none;*/
+        /*}*/
+        
+        /*.baidu {*/
+        /*    overflow: hidden;*/
+        /*    margin: 100px auto;*/
+        /*    background-color: #fff;*/
+        /*    width: 410px;*/
+        /*    padding-top: 3px;*/
+        /*}*/
+        
+        /*.baidu li {*/
+        /*    float: left;*/
+        /*    margin: 0 1px;*/
+        /*    cursor: pointer;*/
+        /*}*/
+        
+        /*.baidu img {*/
+        /*    width: 100px;*/
+        /*}*/
+        
         * {
             margin: 0;
             padding: 0;
@@ -16,22 +47,26 @@
             background: url(images/1.jpg) no-repeat center top;
         }
         
-        li {
-            list-style: none;
+        .baidu {
+            overflow: hidden; /* 清除浮动 */
+            padding-top: 5px;
+            padding-left: 2px;
+            padding-right: 2px;
+            width: 410px;
+            background-color: white;
+            margin: 100px auto;
         }
         
-        .baidu {
-            overflow: hidden;
-            margin: 100px auto;
-            background-color: #fff;
-            width: 410px;
-            padding-top: 3px;
+        .end {
+            display: block;
+            clear: both;
         }
         
         .baidu li {
             float: left;
             margin: 0 1px;
             cursor: pointer;
+            list-style: none;
         }
         
         .baidu img {
@@ -42,23 +77,31 @@
 
 <body>
     <ul class="baidu">
-        <li><img src="images/1.jpg"></li>
-        <li><img src="images/2.jpg"></li>
-        <li><img src="images/3.jpg"></li>
-        <li><img src="images/4.jpg"></li>
+        <li><img src="images/1.jpg" alt=""></li>
+        <li><img src="images/2.jpg" alt=""></li>
+        <li><img src="images/3.jpg" alt=""></li>
+        <li><img src="images/4.jpg" alt=""></li>
     </ul>
+<!--    <script>-->
+<!--        // 1. 获取元素 -->
+<!--        var imgs = document.querySelector('.baidu').querySelectorAll('img');-->
+<!--        // console.log(imgs);-->
+<!--        // 2. 循环注册事件 -->
+<!--        for (var i = 0; i < imgs.length; i++) {-->
+<!--            imgs[i].onclick = function() {-->
+<!--                // this.src 就是我们点击图片的路径   images/2.jpg-->
+<!--                // console.log(this.src);-->
+<!--                // 把这个路径 this.src 给body 就可以了-->
+<!--                document.body.style.backgroundImage = 'url(' + this.src + ')';-->
+<!--            }-->
+<!--        }-->
+<!--    </script>-->
     <script>
-        // 1. 获取元素 
-        var imgs = document.querySelector('.baidu').querySelectorAll('img');
-        // console.log(imgs);
-        // 2. 循环注册事件 
-        for (var i = 0; i < imgs.length; i++) {
-            imgs[i].onclick = function() {
-                // this.src 就是我们点击图片的路径   images/2.jpg
-                // console.log(this.src);
-                // 把这个路径 this.src 给body 就可以了
+        let images = document.querySelectorAll('.baidu img');
+        for (let image of images) {
+            image.onclick = function () {
                 document.body.style.backgroundImage = 'url(' + this.src + ')';
-            }
+            };
         }
     </script>
 </body>
