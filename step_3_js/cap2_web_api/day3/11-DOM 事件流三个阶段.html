@@ -45,16 +45,29 @@
         //     alert('father');
         // }, true);
         // 4. 冒泡阶段 如果addEventListener 第三个参数是 false 或者 省略 那么则处于冒泡阶段  son -> father ->body -> html -> document
-        var son = document.querySelector('.son');
-        son.addEventListener('click', function() {
-            alert('son');
-        }, false);
-        var father = document.querySelector('.father');
-        father.addEventListener('click', function() {
-            alert('father');
-        }, false);
-        document.addEventListener('click', function() {
-            alert('document');
+        // var son = document.querySelector('.son');
+        // son.addEventListener('click', function() {
+        //     alert('son');
+        // }, false);
+        // var father = document.querySelector('.father');
+        // father.addEventListener('click', function() {
+        //     alert('father');
+        // }, false);
+        // document.addEventListener('click', function() {
+        //     alert('document');
+        // })
+        
+        let son = document.querySelector('.son');
+        let father = document.querySelector('.father');
+        son.addEventListener('click', function () {
+            alert('son ...');
+        });
+        // 跳过father，son和body冒泡触发
+        // father.addEventListener('click', function () {
+        //     alert('father ...');
+        // });
+        document.body.addEventListener('click', function () {
+            alert('body ...')
         })
     </script>
 </body>

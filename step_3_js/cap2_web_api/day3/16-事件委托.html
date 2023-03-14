@@ -17,14 +17,21 @@
         <li>知否知否，点我应有弹框在手！</li>
     </ul>
     <script>
-        // 事件委托的核心原理：给父节点添加侦听器， 利用事件冒泡影响每一个子节点
-        var ul = document.querySelector('ul');
-        ul.addEventListener('click', function(e) {
-            // alert('知否知否，点我应有弹框在手！');
-            // e.target 这个可以得到我们点击的对象
-            e.target.style.backgroundColor = 'pink';
-
-
+        // // 事件委托的核心原理：给父节点添加侦听器， 利用事件冒泡影响每一个子节点
+        // var ul = document.querySelector('ul');
+        // ul.addEventListener('click', function(e) {
+        //     // alert('知否知否，点我应有弹框在手！');
+        //     // e.target 这个可以得到我们点击的对象
+        //     e.target.style.backgroundColor = 'pink';
+        //
+        //
+        // })
+        let ul = document.querySelector('ul');
+        ul.addEventListener('mouseover', function (event) {
+            event.target.style.backgroundColor = 'pink';
+        })
+        ul.addEventListener('mouseout', function (event) {
+            event.target.style.backgroundColor = '';
         })
     </script>
 </body>
