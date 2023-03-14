@@ -15,6 +15,10 @@
         console.log(num);
         console.log(window.num);
 
+        // let 变量不会作为 window 对象的属性
+        let ll = 12;
+        console.log(window.ll);// undefined
+        
         function fn() {
             console.log(11);
 
@@ -27,6 +31,9 @@
         // var name = 10;
         console.log(window.name);
     </script>
+<script>
+    console.log(ll);
+</script>
 </body>
 
 </html>

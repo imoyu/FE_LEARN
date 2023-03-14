@@ -17,22 +17,34 @@
 
 <body>
     <script>
-        window.addEventListener('load', function() {
-            var div = document.querySelector('div');
-            window.addEventListener('resize', function() {
-                console.log(window.innerWidth);
+        // window.addEventListener('load', function() {
+        //     var div = document.querySelector('div');
+        //     window.addEventListener('resize', function() {
+        //         console.log(window.innerWidth);
+        //
+        //         console.log('变化了');
+        //         if (window.innerWidth <= 800) {
+        //             div.style.display = 'none';
+        //         } else {
+        //             div.style.display = 'block';
+        //         }
+        //
+        //     })
+        // })
 
-                console.log('变化了');
-                if (window.innerWidth <= 800) {
-                    div.style.display = 'none';
-                } else {
-                    div.style.display = 'block';
-                }
-
-            })
-        })
     </script>
     <div></div>
+    <script>
+        let div = document.querySelector('div');
+        window.addEventListener('resize', function () {
+            console.log(this.innerWidth)
+            if (this.innerWidth <= 800) {
+                div.style.display = 'none';
+            } else {
+                div.style.display = 'block';
+            }
+        });
+    </script>
 </body>
 
 </html>
