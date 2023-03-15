@@ -27,6 +27,12 @@
         var timer1 = setTimeout(callback, 3000);
         var timer2 = setTimeout(callback, 5000);
         // setTimeout('callback()', 3000); // 我们不提倡这个写法
+
+        function b() {
+            alert(222);
+        }
+        let x = b;
+        setTimeout(x);
     </script>
 </body>
 

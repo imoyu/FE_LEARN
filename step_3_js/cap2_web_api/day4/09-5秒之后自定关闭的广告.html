@@ -10,11 +10,23 @@
 
 <body>
     <img src="images/ad.jpg" alt="" class="ad">
+    <img src="images/ad.jpg" alt="" class="ad">
+    
+    <div><button>stop</button></div>
     <script>
         var ad = document.querySelector('.ad');
-        setTimeout(function() {
+        // setTimeout(function() {
+        //     ad.style.display = 'none';
+        // }, 5000);
+        let timer = setTimeout(() => {
             ad.style.display = 'none';
         }, 5000);
+        
+        // 停止定时
+        let btn = document.querySelector('button');
+        btn.addEventListener('click', ev => {
+            clearTimeout(timer);
+        })
     </script>
 </body>
 

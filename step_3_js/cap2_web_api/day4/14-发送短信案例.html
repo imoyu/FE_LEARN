@@ -16,23 +16,40 @@
         // 里面秒数是有变化的，因此需要用到定时器
         // 定义一个变量，在定时器里面，不断递减
         // 如果变量为0 说明到了时间，我们需要停止定时器，并且复原按钮初始状态
-        var btn = document.querySelector('button');
-        var time = 3; // 定义剩下的秒数
-        btn.addEventListener('click', function() {
-            btn.disabled = true;
-            var timer = setInterval(function() {
-                if (time == 0) {
-                    // 清除定时器和复原按钮
+        // var btn = document.querySelector('button');
+        // var time = 3; // 定义剩下的秒数
+        // btn.addEventListener('click', function() {
+        //     btn.disabled = true;
+        //     var timer = setInterval(function() {
+        //         if (time === 0) {
+        //             // 清除定时器和复原按钮
+        //             clearInterval(timer);
+        //             btn.disabled = false;
+        //             btn.innerHTML = '发送';
+        //         } else {
+        //             btn.innerHTML = '还剩下' + time + '秒';
+        //             time--;
+        //         }
+        //     }, 1000);
+        //
+        // })
+        let btn = document.querySelector('button');
+        let time = 5;
+        btn.addEventListener('click', function () {
+            btn.disabled = false;
+            let timer = setInterval(function () {
+                if (time === 0) {
+                    btn.innerHTML = '发送成功';
+                } else if (time < 0) {
                     clearInterval(timer);
                     btn.disabled = false;
                     btn.innerHTML = '发送';
                 } else {
-                    btn.innerHTML = '还剩下' + time + '秒';
-                    time--;
+                    btn.innerHTML = '还剩' + time + '秒';
                 }
-            }, 1000);
-
-        })
+                time--;
+            }, 1000)
+        });
     </script>
 </body>
 
