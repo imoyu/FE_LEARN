@@ -26,14 +26,25 @@
         // 3. 利用定时器不断重复这个操作
         // 4. 加一个结束定时器的条件
         // 5. 注意此元素需要添加定位， 才能使用element.style.left
-        var div = document.querySelector('div');
-        var timer = setInterval(function() {
-            if (div.offsetLeft >= 400) {
-                // 停止动画 本质是停止定时器
-                clearInterval(timer);
+        // var div = document.querySelector('div');
+        // var timer = setInterval(function() {
+        //     if (div.offsetLeft >= 400) {
+        //         // 停止动画 本质是停止定时器
+        //         clearInterval(timer);
+        //     }
+        //     div.style.left = div.offsetLeft + 1 + 'px';
+        // }, 30);
+        
+        let div = document.querySelector('div');
+        let direct = 1;
+        setInterval(function () {
+            if (direct === 1 && div.offsetLeft >= 500) {
+                direct = -1;
+            } else if (direct === -1 && div.offsetLeft <= 0) {
+                direct = 1;
             }
-            div.style.left = div.offsetLeft + 1 + 'px';
-        }, 30);
+            div.style.left = div.offsetLeft + (10 * direct) + 'px';
+        }, 10);
     </script>
 </body>
 
