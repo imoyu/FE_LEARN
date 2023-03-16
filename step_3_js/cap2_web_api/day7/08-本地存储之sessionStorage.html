@@ -22,6 +22,14 @@
         var get = document.querySelector('.get');
         var remove = document.querySelector('.remove');
         var del = document.querySelector('.del');
+        let map = {
+            x: 12,
+            'a': 13
+        }
+        console.log(map.a);
+        console.log(map.x);
+        console.log(map['x']);
+        console.log(map['a']);
         set.addEventListener('click', function() {
             // 当我们点击了之后，就可以把表单里面的值存储起来
             var val = ipt.value;
