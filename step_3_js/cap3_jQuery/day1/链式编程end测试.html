@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery.min.js"></script>
+</head>
+<body>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+    <div>7</div>
+    <div>8</div>
+    <div>9</div>
+    <div>10</div>
+
+    <script>
+        $(
+            $('div').eq(2).css("background-color", "red")
+                // 不生效，筛选器会改变当前的元素，需要加 end 结束
+                // .end()
+                .eq(3).css("background-color", "blue")
+        );
+    </script>
+</body>
+</html>

@@ -24,7 +24,7 @@
 </head>
 
 <body>
-    <div class="current"></div>
+    <div></div>
     <script>
         $(function() {
             // 1. 添加类 addClass()
@@ -36,9 +36,16 @@
             //     $(this).removeClass("current");
             // });
             // 3. 切换类 toggleClass()
-            $("div").click(function() {
+            // $("div").click(function() {
+            //     $(this).toggleClass("current");
+            // });
+
+            // $("div").click(function () {
+            //     $(this).addClass("current");
+            // })
+            $("div").click(function () {
                 $(this).toggleClass("current");
-            });
+            })
         })
     </script>
 </body>

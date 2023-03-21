@@ -83,8 +83,17 @@
                     width: 69
                 }).find(".small").stop().fadeIn().siblings(".big").stop().fadeOut();
             })
-
-
+            .mouseleave(function () {
+                $(this)
+                    .stop()
+                    .animate({
+                        width: 69
+                    })
+                // 使用链式编程时，会产生问题，这是由于筛选器会改变当前的 this Dom 对象
+                // 需要使用 end 来还原
+                .find('.small').stop().fadeIn().end()
+                .find('.big').stop().fadeOut()
+            })
 
         });
     </script>

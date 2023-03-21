@@ -25,7 +25,7 @@
             margin: 100px;
         }
         
-        .nav>li {
+        .nav > li {
             position: relative;
             float: left;
             width: 80px;
@@ -41,7 +41,7 @@
             color: #333;
         }
         
-        .nav>li>a:hover {
+        .nav > li > a:hover {
             background-color: #eee;
         }
         
@@ -126,18 +126,32 @@
         </li>
     </ul>
     <script>
-        $(function() {
-            // 鼠标经过
-            $(".nav>li").mouseover(function() {
-                // $(this) jQuery 当前元素  this不要加引号
-                // show() 显示元素  hide() 隐藏元素
-                $(this).children("ul").show();
-            });
-            // 鼠标离开
-            $(".nav>li").mouseout(function() {
-                $(this).children("ul").hide();
-            })
-        })
+        // $(function() {
+        //     // 鼠标经过
+        //     $(".nav>li").mouseover(function() {
+        //         // $(this) jQuery 当前元素  this不要加引号
+        //         // show() 显示元素  hide() 隐藏元素
+        //         $(this).children("ul").show();
+        //     });
+        //     // 鼠标离开
+        //     $(".nav>li").mouseout(function() {
+        //         $(this).children("ul").hide();
+        //     })
+        // })
+        $(
+            function () {
+                $(".nav > li").mouseover(
+                    function () {
+                        $(this).children("ul").show();
+                    }
+                )
+                $(".nav > li").mouseout(
+                    function () {
+                        $(this).children("ul").hide();
+                    }
+                )
+            }
+        )
     </script>
 </body>
 
