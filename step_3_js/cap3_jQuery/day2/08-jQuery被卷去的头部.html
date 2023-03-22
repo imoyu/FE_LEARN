@@ -36,31 +36,48 @@
     <div class="container">
     </div>
     <script>
-        $(function() {
-            $(document).scrollTop(100);
-            // 被卷去的头部 scrollTop()  / 被卷去的左侧 scrollLeft()
-            // 页面滚动事件
-            var boxTop = $(".container").offset().top;
-            $(window).scroll(function() {
-                // console.log(11);
-                console.log($(document).scrollTop());
-                if ($(document).scrollTop() >= boxTop) {
-                    $(".back").fadeIn();
-                } else {
-                    $(".back").fadeOut();
-                }
-            });
-            // 返回顶部
-            $(".back").click(function() {
-                // $(document).scrollTop(0);
-                $("body, html").stop().animate({
-                    scrollTop: 0
-                });
-                // $(document).stop().animate({
-                //     scrollTop: 0
-                // }); 不能是文档而是 html和body元素做动画
-            })
-        })
+        // $(function() {
+        //     $(document).scrollTop(100);
+        //     // 被卷去的头部 scrollTop()  / 被卷去的左侧 scrollLeft()
+        //     // 页面滚动事件
+        //     var boxTop = $(".container").offset().top;
+        //     $(window).scroll(function() {
+        //         // console.log(11);
+        //         console.log($(document).scrollTop());
+        //         if ($(document).scrollTop() >= boxTop) {
+        //             $(".back").fadeIn();
+        //         } else {
+        //             $(".back").fadeOut();
+        //         }
+        //     });
+        //     // 返回顶部
+        //     $(".back").click(function() {
+        //         // $(document).scrollTop(0);
+        //         $("body, html").stop().animate({
+        //             scrollTop: 0
+        //         });
+        //         // $(document).stop().animate({
+        //         //     scrollTop: 0
+        //         // }); 不能是文档而是 html和body元素做动画
+        //     })
+        // })
+        $(
+            function () {
+                let boxTop = $('.container').offset().top
+                $(window).scroll(function () {
+                    if ($(document).scrollTop() > boxTop) {
+                        $('.back').fadeIn();
+                    } else {
+                        $('.back').fadeOut();
+                    }
+                })
+                $('.back').click(function () {
+                    $('html, body').stop().animate({
+                        scrollTop: 0
+                    })
+                })
+            }
+        )
     </script>
 </body>
 
