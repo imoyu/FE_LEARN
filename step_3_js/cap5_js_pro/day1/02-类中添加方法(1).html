@@ -30,9 +30,28 @@
         console.log(ldh);
         console.log(zxy);
         // (1) 我们类里面所有的函数不需要写function 
-        //(2) 多个函数方法之间不需要添加逗号分隔
+        // (2) 多个函数方法之间不需要添加逗号分隔
         ldh.sing('冰雨');
         zxy.sing('李香兰');
+        
+        class Dog {
+            v = 12
+            'v 2' = 'xx'
+            constructor(color, age) {
+                this.color = color;
+                this.age = age;
+            }
+
+            info() {
+                console.log(this.name + ' ' + this.age);
+            }
+        }
+        
+        let dog = new Dog('Yellow', 12);
+        dog.info();
+        console.log(dog.v)
+        console.log(dog['v'])
+        console.log(dog['v 2'])
     </script>
 </body>
 

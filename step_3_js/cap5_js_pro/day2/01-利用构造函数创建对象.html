@@ -33,6 +33,18 @@
         console.log(ldh);
         ldh.sing();
         zxy.sing();
+
+        // ===================
+        let o1 = new Object();
+        let o2 = {}
+        function O(name) {
+            this.name = name;
+            this.hi = function () {
+                console.log('hi ' + this.name);
+            }
+        }
+
+        new O('kkk').hi();
     </script>
 </body>
 

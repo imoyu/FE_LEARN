@@ -23,8 +23,12 @@
             Father.call(this, uname, age);
             this.score = score;
         }
+
+        Father.prototype.x = 123;
         var son = new Son('刘德华', 18, 100);
         console.log(son);
+        // 原型未被继承
+        console.log(son.x);
     </script>
 </body>
 

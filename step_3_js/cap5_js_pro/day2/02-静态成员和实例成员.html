@@ -12,6 +12,7 @@
     <script>
         // 构造函数中的属性和方法我们称为成员, 成员可以添加
         function Star(uname, age) {
+            a = 12;
             this.uname = uname;
             this.age = age;
             this.sing = function() {
@@ -30,6 +31,7 @@
         // 静态成员只能通过构造函数来访问
         console.log(Star.sex);
         console.log(ldh.sex); // 不能通过对象来访问
+        console.log(ldh.a); // 不能通过对象来访问
     </script>
 </body>
 

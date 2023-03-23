@@ -20,10 +20,14 @@
             that = this;
         }
         var ldh = new Star('刘德华', 18);
+        console.log("that1: " + that);
         // 1. 在构造函数中,里面this指向的是对象实例 ldh
         ldh.sing();
+        console.log("that2: " + that.uname);
         console.log(that === ldh);
-
+        var ldh222 = new Star('刘德华x', 18);
+        ldh222.sing();
+        console.log("that3: " + that.uname);
         // 2.原型对象函数里面的this 指向的是 实例对象 ldh
     </script>
 </body>
