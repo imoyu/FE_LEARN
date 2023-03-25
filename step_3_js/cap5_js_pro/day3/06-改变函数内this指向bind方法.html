@@ -41,15 +41,36 @@
         //         this.disabled = false; // 此时定时器函数里面的this 指向的是btn
         //     }.bind(this), 3000); // 这个this 指向的是btn 这个对象
         // }
-        var btns = document.querySelectorAll('button');
-        for (var i = 0; i < btns.length; i++) {
-            btns[i].onclick = function() {
-                this.disabled = true;
-                setTimeout(function() {
-                    this.disabled = false;
-                }.bind(this), 2000);
+        
+        // var btns = document.querySelectorAll('button');
+        // for (var i = 0; i < btns.length; i++) {
+        //     btns[i].onclick = function() {
+        //         this.disabled = true;
+        //         setTimeout(function() {
+        //             this.disabled = false;
+        //         }.bind(this), 2000);
+        //     }
+        // }
+        
+        let btn = document.querySelector('button');
+        btn.addEventListener('click', function () {
+            this.disabled = true;
+            let that = this;
+            setTimeout(function () {
+                that.disabled = false;
+            }, 3000)
+        })
+
+        document.querySelectorAll('button').forEach((value, index) => {
+            if (index === 2) {
+                value.onclick = function () {
+                    this.disabled = true;
+                    setTimeout(function () {
+                        this.disabled = false;
+                    }.bind(this), 2000);
+                }
             }
-        }
+        })
     </script>
 </body>
 

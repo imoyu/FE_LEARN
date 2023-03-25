@@ -17,12 +17,13 @@
             name: 'andy'
         };
 
-        function fn(arr) {
+        function fn(...arr) {
             console.log(this);
             console.log(arr); // 'pink'
+            // console.log(arr2);
 
         };
-        fn.apply(o, ['pink']);
+        fn.apply(o, ['pink', 'aaa', 'bbb']);
         // 1. 也是调用函数 第二个可以改变函数内部的this指向
         // 2. 但是他的参数必须是数组(伪数组)
         // 3. apply 的主要应用 比如说我们可以利用 apply 借助于数学内置对象求数组最大值 

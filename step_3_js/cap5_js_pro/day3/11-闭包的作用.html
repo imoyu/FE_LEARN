@@ -36,6 +36,17 @@
         //         console.log(num);
 
         //     }
+
+        function outer() {
+            let msg = 'abc';
+            function inner() {
+                console.log(msg);
+            }
+            return inner;
+        }
+        let inner = outer();
+        inner();
+        
     </script>
 </body>
 

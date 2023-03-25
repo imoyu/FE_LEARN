@@ -23,11 +23,21 @@
             sayHi: function() {
                 console.log('人生的巅峰');
 
-            }
+            },
+            sayHello() {
+                console.log('hello 2 ...')
+            },
+            a: 12,
+            'b': 123,
+            info() {
+                console.log(this.a);
+            },
         }
         o.sayHi();
+        o.sayHello();
+        o.info();
         // 3. 构造函数
-        function Star() {};
+        function Star() {}
         new Star();
         // 4. 绑定事件函数
         // btn.onclick = function() {};   // 点击了按钮就可以调用这个函数

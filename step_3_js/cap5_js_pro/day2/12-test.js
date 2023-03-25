@@ -18,9 +18,14 @@ console.log(new Son().b);
 console.log('\n==================\n')
 // 函数能存储静态变量
 function f() {
-    b = 13; // 方法（类）中的变量可以不需要 let
+    // 方法中这种成员的定义是无效的，既不是静态成员，也不是普通成员（this）
+    // 作为方法中的变量，运行 f() 时报错
+    // Class 中的成员可以不加 let，并且直接就是成员
+    b = 13;
     console.log(b);
 }
+f()
+// 静态成员
 f.a = 12;
 console.log(f); // [Function: f] { a: 12 }
 

@@ -25,11 +25,18 @@
         function fn() {
             'use strict';
             // 下面的代码按照严格模式执行
+            console.log(1);
+            console.log(this);
         }
 
         function fun() {
             // 里面的还是按照普通模式执行
+            console.log(2);
+            console.log(this);
         }
+
+        fn();
+        fun();
     </script>
 </body>
 
