@@ -32,8 +32,8 @@
 
         // 思考题 2：
 
-        // var name = "The Window";　　
-        // var object = {　　　　
+        // var name = "The Window";
+        // var object = {
         //     name: "My Object",
         //     getNameFunc: function() {
         //         var that = this;
@@ -43,6 +43,18 @@
         //     }
         // };
         // console.log(object.getNameFunc()())
+
+        let name2 = 'abc';
+        let obj = {
+            name2: 'xyz',
+            getName() {
+                let that = this;
+                return function () {
+                    return that.name2;
+                }
+            },
+        }
+        console.log(obj.getName()());
     </script>
 </body>
 

@@ -29,7 +29,14 @@
             }]
         }, {
             id: 2,
-            name: '服饰'
+            name: '服饰x'
+        }, {
+            id: 152,
+            name: '服饰y',
+            goods: [{
+                id: 1523,
+                name: '服饰z',
+            }]
         }];
         // 我们想要做输入id号,就可以返回的数据对象
         // 1. 利用 forEach 去遍历里面的每一个对象
@@ -54,6 +61,21 @@
         console.log(getID(data, 11));
         console.log(getID(data, 12));
         console.log(getID(data, 111));
+
+        // forEach 里的 return 没有效果 !!
+        function getID2(json, id) {
+            for (let item of json) {
+                if (item.id === id) {
+                    return item;
+                } else if (item.goods && item.goods.length > 0) {
+                    let o = getID(item.goods, id);
+                    if (Object.keys(o).length !== 0) {
+                        return o;
+                    }
+                }
+            }
+            return {};
+        }
     </script>
 </body>
 
