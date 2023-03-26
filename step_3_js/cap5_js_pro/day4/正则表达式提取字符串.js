@@ -28,3 +28,11 @@ console.log(s2.match(reg3));
 let reg4 = /(aax22)|(22xaa)/g
 console.log(s2.match(reg4));
 // null
+
+
+let text = "The rain in SPAIN stays mainly in the plain";
+let result = text.match("ain");
+console.log(result);
+console.log(result + '');
+console.log(result[0]);
+console.log(result['index']);
