@@ -13,11 +13,18 @@
   <button id="btnGET">发起不带参数的GET请求</button>
 
   <script>
-    $(function () {
-      $('#btnGET').on('click', function () {
-        $.get('http://www.liulongbin.top:3006/api/getbooks', function (res) {
-          console.log(res)
-        })
+    // $(function () {
+    //   $('#btnGET').on('click', function () {
+    //     $.get('http://www.liulongbin.top:3006/api/getbooks', function (res) {
+    //       console.log(res)
+    //     })
+    //   })
+    // })
+    $(() => {
+      $('#btnGET').on('click', () => {
+          $.get('http://www.liulongbin.top:3006/api/getbooks', (res) => {
+            console.log(res);
+          })
       })
     })
   </script>
