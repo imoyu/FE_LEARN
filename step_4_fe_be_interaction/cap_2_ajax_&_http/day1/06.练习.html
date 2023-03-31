@@ -86,14 +86,25 @@
 
             let url = 'http://www.liulongbin.top:3006/api/addbook';
             let params = { bookname: bookName, author, publisher };
-            $.post(url, params, function (res) {
-                if (res.status !== 201) {
-                    return alert('请求失败');
+            $.ajax({
+                url,
+                type: 'post',
+                data: params,
+                success: (res) => {
+                    if (res.status !== 201) {
+                        return alert('请求失败');
+                    }
+                    getBookList();
+                    $('#iptBookname').val('');
+                    $('#iptAuthor').val('');
+                    $('#iptPublisher').val('');
+                },
+                error: (jqXHR, textStatus, errorThrown) => {
+                    console.log(jqXHR);
+                    console.log(jqXHR.status, textStatus);
+                    console.log(errorThrown);
+                    alert('请求失败');
                 }
-                getBookList();
-                $('#iptBookname').val('');
-                $('#iptAuthor').val('');
-                $('#iptPublisher').val('');
             });
         });
         

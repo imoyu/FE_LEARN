@@ -26,10 +26,14 @@
       // })
 
       // 第二种方式
-      $('#f1').on('submit', function (e) {  
-        alert('监听到了表单的提交事件2')
-        e.preventDefault()
-      })
+      // $('#f1').on('submit', function (e) {
+      //   alert('监听到了表单的提交事件2')
+      //   e.preventDefault()
+      // })
+      $('#f1').on('submit', (event) => {
+        alert(1111);
+        event.preventDefault();
+      });
     })
   </script>
 
