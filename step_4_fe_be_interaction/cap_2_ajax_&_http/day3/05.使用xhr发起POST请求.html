@@ -17,6 +17,7 @@
     // 3. 设置 Content-Type 属性
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
     // 4. 调用 send 函数
+    // send 中的内容在 body 里传输，JSON.stringify 获取 json 参数
     xhr.send('bookname=水浒传&author=施耐庵&publisher=上海图书出版社')
     // 5. 监听事件
     xhr.onreadystatechange = function () {

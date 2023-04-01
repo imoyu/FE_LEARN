@@ -18,11 +18,19 @@
     xhr.send()
     // 4. 监听 onreadystatechange 事件
     xhr.onreadystatechange = function () {
+      console.log('this:');
+      console.log(this);
       if (xhr.readyState === 4 && xhr.status === 200) {
         // 获取服务器响应的数据
         console.log(xhr.responseText)
       }
     }
+
+    let xmlHttpRequest = new XMLHttpRequest();
+    xmlHttpRequest.open('post', 'http://www.liulongbin.top:3006/api/getbooks');
+    xmlHttpRequest.onreadystatechange = () => {
+      console.log(xmlHttpRequest.responseText);
+    };
   </script>
 </body>
 

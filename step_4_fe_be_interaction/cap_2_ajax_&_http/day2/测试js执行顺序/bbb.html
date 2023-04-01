@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--  jq 放在下一行无法引用  -->
+    <script src="jqFunc.js"></script>
+    <script src="../lib/jquery.js"></script>
+    <!--jq $() 里的方法最后执行-->
+    <script src="jqFunc.js"></script>
+    <script src="aaa.js"></script>
+</head>
+<body>
+    <p id="ppp">QWERTYUIOP</p>
+    <script>
+        console.log(222);
+    </script>
+    <!--  只有 body 内的脚本才能执行  -->
+    <script src="aa2.js"></script>
+</body>
+    <script>
+        console.log(333);
+    </script>
+    <script src="aa2.js"></script>
+</html>
+
+    <script src="aa2.js"></script>
