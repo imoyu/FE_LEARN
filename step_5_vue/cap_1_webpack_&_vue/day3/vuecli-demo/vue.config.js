@@ -1,4 +1,4 @@
-  module.exports = {
+module.exports = {
     // ...其他配置
-    lintOnSave: false // 关闭eslint检查
-  }
+    lintOnSave: false, // 关闭eslint检查
+};

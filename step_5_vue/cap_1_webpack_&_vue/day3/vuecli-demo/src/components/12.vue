@@ -3,15 +3,12 @@
     <h3>案例：折叠面板</h3>
     <div>
       <div class="title">
-        <h4>芙蓉楼送辛渐</h4>
-        <!-- 1.绑定点击事件 -->
-        <span class="btn" @click="btn">
-          <!-- 4. 根据isShow的值显示不同文字 -->
-          {{ isShow ? '收起' : '展开'}}
+        <h4>芙蓉楼送辛建</h4>
+        <span class="btn" @click="toggle">
+          {{ closed ? '展开' : '收起' }}
         </span>
       </div>
-      <!-- 2. v-show配合变量来控制标签隐藏出现 -->
-      <div class="container" v-show="isShow">
+      <div v-if="!closed">
         <p>寒雨连江夜入吴,</p>
         <p>平明送客楚山孤。</p>
         <p>洛阳亲友如相问，</p>
@@ -23,21 +20,21 @@
 
 <script>
 export default {
+  name: 'vue12',
   data() {
     return {
-      isShow: true
+      closed: true,
     }
   },
   methods: {
-    btn(){
-      // 3. 点击时, 把值改成false
-      this.isShow = !this.isShow
-    }
+    toggle() {
+      this.closed = !this.closed;
+    },
   }
-}
+};
 </script>
 
-<style lang="less" scoped>
+<style lang="less">
 body {
   background-color: #ccc;
   #app {
