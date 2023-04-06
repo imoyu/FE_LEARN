@@ -34,7 +34,8 @@ export default {
   data() {
     return {
       from: '',
-      // 复选框勾选 -> 对应的 value 穿给数组
+      // 接收 checkBox 的字段是数组时，接收的是 value，字段是值时，绑定的是 checked
+      // 复选框勾选 -> 对应的 value 传给数组
       // 数组值改变 -> 找到这个 checkbox，checked 改为 false
       hobby: [],
       gender: '男',
