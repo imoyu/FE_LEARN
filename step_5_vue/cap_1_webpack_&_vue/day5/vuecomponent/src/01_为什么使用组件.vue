@@ -11,7 +11,7 @@
 import Pannel from './components/Pannel'
 export default {
   components: {
-    Pannel: Pannel
+    Pannel,
   }
 }
 </script>
