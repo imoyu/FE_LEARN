@@ -1,7 +1,7 @@
 <template>
   <div>
-      <input ref="myInp" type="text" placeholder="这是一个输入框" v-if="isShow">
-      <button v-else @click="btn">点击我进行搜索</button>
+      <input ref="myInp" v-if="isShow" type="text" placeholder="这是一个输入框">
+      <button v-else @click="btn">点击这里开始搜索</button>
   </div>
 </template>
 

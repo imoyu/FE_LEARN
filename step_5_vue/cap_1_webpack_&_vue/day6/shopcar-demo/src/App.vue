@@ -9,7 +9,7 @@
     <MyFooter @changeAll="allFn" :arr="list"></MyFooter>
   </div>
 </template>
-
+<!-- todo -->
 <script>
 // 目标: 项目初始化 - 静态页面
 // 1. 创建项目, 下包, 引入bs样式

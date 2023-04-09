@@ -49,6 +49,7 @@ export default {
     },
   },
   computed: {
+    // 不能作为方法使用，而是作为属性使用
     showArr() {
       switch (this.taskType) {
         case 'yes':

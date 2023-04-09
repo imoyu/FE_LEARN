@@ -17,11 +17,20 @@
 // 3. 恰当时机, 获取组件对象
 import Demo from './Child/Demo'
 export default {
-    mounted(){
+  created() {
+    // undefined
+    console.log(this.$refs.de);
+  },
+  // 只有挂载后才能获取到
+  mounted() {
         console.log(document.getElementById("h")); // h1
         console.log(this.$refs.myH); // h1
 
         let demoObj = this.$refs.de;
+        console.log(demoObj);
+        // 获取 data() 里的属性
+        const data1 = demoObj.data();
+        console.log(data1.aaa);
         demoObj.fn()
     },
     components: {

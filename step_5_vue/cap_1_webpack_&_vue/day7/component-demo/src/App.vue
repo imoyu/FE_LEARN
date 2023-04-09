@@ -21,6 +21,8 @@
     <hr>
     <h1>7. 自定义指令</h1>
     <UseDirective></UseDirective>
+    <h1>8. 测试 v-if v-show 是否能触发 activated</h1>
+    <Test_Activated></Test_Activated>
   </div>
 </template>
 
@@ -32,6 +34,8 @@ import UseSlot2 from './views/04_UseSlot'
 import UseSlot3 from './views/05_UseSlot'
 import UseTable from './views/06_UseTable'
 import UseDirective from './views/07_UseDirective'
+import Test_Activated from './views/08_Test_Activated.vue'
+
 export default {
   components: {
     UseDynamic,
@@ -40,7 +44,8 @@ export default {
     UseSlot2,
     UseSlot3,
     UseTable,
-    UseDirective
+    UseDirective,
+    Test_Activated,
   }
 }
 </script>

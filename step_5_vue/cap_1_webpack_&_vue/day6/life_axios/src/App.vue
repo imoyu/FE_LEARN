@@ -19,26 +19,27 @@
 </template>
 
 <script>
-import Life from './components/Life'
-import UseAxios from './components/UseAxios'
-import More from './components/More'
-import Tick from './components/Tick'
-import Com from './components/Com'
+import Life from './components/Life';
+import UseAxios from './components/AxiosTest.vue';
+import More from './components/More';
+import Tick from './components/Tick';
+import Com from './components/Com';
+
 export default {
-  data(){
+  data() {
     return {
-      show: true
-    }
+      show: true,
+    };
   },
   components: {
     Life,
     UseAxios,
     More,
     Tick,
-    [Com.name]: Com // 对象里的key是变量的话[]属性名表达式
+    [Com.name]: Com, // 对象里的key是变量的话[]属性名表达式
     // "ComNameHaHa": Com
-  }
-}
+  },
+};
 </script>
 
 <style>
