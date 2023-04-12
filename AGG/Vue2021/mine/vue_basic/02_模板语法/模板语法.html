@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="../js/vue.js"></script>
+</head>
+<body>
+  <div id="root">
+    <h3>插值语法</h3>
+    <div>
+      {{ obj.hello }}
+    </div>
+    <h3>指令语法</h3>
+    <a :href="obj.url">{{ obj.name }}</a>
+  </div>
+
+  <script>
+    new Vue({
+      el: '#root',
+      data: {
+        obj: {
+          hello: '你好',
+          url: 'http://www.baidu.com',
+          name: '百度一下',
+        }
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script type="text/javascript" src="../js/vue.js"></script>
+</head>
+<body>
+  <div id="demo">
+    <h1>Hello, {{ name.toLowerCase() }}, {{ address }}</h1>
+  </div>
+  <script>
+    Vue.config.productionTip = false;
+    new Vue({
+      el: '#demo',
+      data() {
+        return {
+          name: 'vue',
+          address: '@@@@@@',
+        }
+      },
+    });
+  </script>
+</body>
+</html>
+
