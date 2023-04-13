@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="../js/vue.js"></script>
+</head>
+<body>
+  <div id="root">
+    <h4>data</h4>
+    {{ fName }}
+    <h4>compute</h4>
+    {{ fullName }}
+    <h4>aaa</h4>
+    {{ aaa }}
+    <h4>bbb</h4>
+    {{ bbb }}
+  </div>
+  <script>
+    new Vue({
+      el: '#root',
+      computed: {
+        fullName() {
+          return this.firstName + this.lastName;
+        },
+
+        // 和属性重名时：[Vue warn]: The computed property "aaa" is already defined in data.
+        // aaa 优先取 data 的
+        aaa() {
+          return 222;
+        },
+        // 和方法重名时
+        // bbb 优先取 method 的
+        bbb() {
+          return 333;
+        },
+      },
+      data() {
+        // NaN，因为此时 firstName 是 undefined
+        const fName = this.firstName + this.lastName;
+        return {
+          firstName: '张',
+          lastName: '哈哈',
+          fName,
+          // aaa: 111,
+        };
+      },
+      methods: {
+        // bbb() {
+        //   return 444;
+        // },
+      },
+    });
+  </script>
+</body>
+</html>

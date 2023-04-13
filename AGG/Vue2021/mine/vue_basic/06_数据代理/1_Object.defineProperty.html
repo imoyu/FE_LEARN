@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    let num1 = 18;
+    let obj = {
+      name: '张三',
+      sex: '男',
+    };
+    // 默认不可迭代、删除、修改
+    Object.defineProperty(obj, 'num1', {
+      value: num1,
+      enumerable: true,
+      writable: true,
+      configurable: true,
+    });
+    console.log(obj);
+    num1 = 19;
+    console.log(obj);
+
+    // 将 num 绑定：
+    let num2 = 20;
+    Object.defineProperty(obj, 'num2', {
+      get() {
+        return num2;
+      },
+      set(v) {
+        num2 = v;
+      }
+    });
+    console.log(obj);
+    num2 = 21;
+    console.log(obj);
+    obj.num2 = 30;
+    console.log(num2);
+  </script>
+</body>
+</html>

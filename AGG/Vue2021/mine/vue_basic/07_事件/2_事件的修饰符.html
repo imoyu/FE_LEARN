@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="../js/vue.js"></script>
+  <style>
+    #d1 {
+      height: 500px;
+      width: 500px;
+      background-color: #0dff1d;
+      border: 1px solid;
+    }
+
+    #d2 {
+      height: 300px;
+      width: 300px;
+      background-color: palevioletred;
+      margin: 100px;
+      border: 1px solid;
+    }
+
+    #d3 {
+      height: 100px;
+      width: 100px;
+      background-color: deepskyblue;
+      margin: 100px;
+      border: 1px solid;
+    }
+
+    .list {
+      width: 200px;
+      height: 200px;
+      background-color: peru;
+      overflow: auto;
+    }
+
+    li {
+      height: 100px;
+    }
+  </style>
+</head>
+<body>
+  <div id="root">
+    <div id="d1" @click="f1">
+      <!-- 增加捕获，点击2，打印 2，3 -->
+      <!--
+      .self:
+          由于默认的冒泡，无修饰符时，点击3：3 -> 2 -> 1
+          若 2 加了修饰符 stop，阻止2冒泡，点击3：3 -> 2
+          若 2 加了修饰符 self，只有触发者是本身时执行，点击3：3 -> 1
+      -->
+      <div id="d2" @click.capture="f2">
+        <div id="d3" @click="f3">
+        </div>
+      </div>
+    </div>
+
+    <!--
+        鼠标滚轮时间，先输出 log，再滚动
+        加了 passive，先滚动再打印 log
+        部分事件有这个问题，@scroll 本身没这个问题
+        移动端开发用的多
+     -->
+    <ul @wheel.passive="demo" class="list">
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+    </ul>
+  </div>
+
+  <script>
+    const vm = new Vue({
+      methods: {
+
+        f1() {
+          console.log('f1 ...');
+        },
+        f2() {
+          console.log('f2 ...');
+        },
+        f3() {
+          console.log('f3 ...');
+        },
+        demo() {
+          for (let i = 0; i < 100000; i++) {
+            console.log('#');
+          }
+          console.log('累坏了');
+        },
+      },
+    });
+    vm.$mount('#root');
+  </script>
+</body>
+</html>

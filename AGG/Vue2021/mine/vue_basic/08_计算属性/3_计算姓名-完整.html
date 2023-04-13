@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="../js/vue.js"></script>
+</head>
+<body>
+  <div id="root">
+    <label>
+      <input type="text" v-model="fullName">
+    </label>
+    <!--  由于缓存，只输出一次 set  -->
+    <div>{{ fullName }}</div>
+    <div>{{ fullName }}</div>
+    <div>{{ fullName }}</div>
+  </div>
+  <script>
+    const vm = new Vue({
+      el: '#root',
+      computed: {
+        fullName: {
+          get() {
+            console.log('get...');
+            return this.lastName + this.firstName;
+          },
+          set(v) {
+            console.log('set ...');
+            console.log(v);
+          },
+        }
+      },
+      data() {
+        return {
+          firstName: '张',
+          lastName: '哈哈',
+        };
+      },
+      methods: {
+        a() {},
+        b() {},
+      },
+    });
+  </script>
+</body>
+</html>

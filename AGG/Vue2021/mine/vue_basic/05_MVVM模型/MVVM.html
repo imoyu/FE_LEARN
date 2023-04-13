@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="../js/vue.js"></script>
+</head>
+<body>
+  <div id="root">
+    <h4>学校名称：{{ name }}</h4>
+    <h4>学校地址：{{ address }}</h4>
+    <h4>测试一下1：{{ 1 + 1 }}</h4>
+    <h4>测试一下2：{{ $options }}</h4>
+    <h4>测试一下3：{{ $emit }}</h4>
+    <h4>测试一下4：{{ _c }}</h4>
+  </div>
+
+  <script type="text/javascript">
+    const vm = new Vue({
+      el: '#root',
+      data: {
+        name: '名字',
+        address: '广东省',
+      },
+    });
+    console.log(vm);
+  </script>
+</body>
+</html>

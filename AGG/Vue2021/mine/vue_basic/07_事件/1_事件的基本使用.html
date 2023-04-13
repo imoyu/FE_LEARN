@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="../js/vue.js"></script>
+</head>
+<body>
+  <div id="root">
+    <label>
+      <button v-on:click="f1">按钮1</button>
+    </label>
+    <button @click="f2('aaa', 'bbb', $event)">按钮2</button>
+  </div>
+
+  <script>
+    const vm = new Vue({
+      methods: {
+        // 未传参数时，第一个参数就是事件
+        f1(a) {
+          console.log('f1 ...');
+          console.log(a);
+        },
+        f2(a, b, c) {
+          console.log('f2 ...');
+          console.log(a);
+          console.log(b);
+          console.log(c);
+        },
+      }
+    });
+    vm.$mount('#root');
+  </script>
+</body>
+</html>

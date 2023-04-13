@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="../js/vue.js"></script>
+</head>
+<body>
+  <div id="root">
+    <h3>1. v-bind</h3>
+    <label>
+      <input type="text" :x="v2" :value="value">
+      ...
+    </label>
+    <h3>2. v-model</h3>
+    <label>
+      <!--   v-model只能应用在表单类元素（输入类元素）上，
+      否则属性x丢失，控制台报错   -->
+      <input type="text" v-model:x="v2"  v-model="value">
+      ...
+    </label>
+  </div>
+  <script>
+    new Vue({
+      el: '#root',
+      data: {
+        value: 'hahaha',
+        v2: '111',
+      },
+    });
+  </script>
+</body>
+</html>

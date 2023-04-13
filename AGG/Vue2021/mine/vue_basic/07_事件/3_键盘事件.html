@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="../js/vue.js"></script>
+</head>
+<body>
+  <div id="root">
+    <label>
+      <input type="text" v-model="txt" @keydown.enter="show" @keyup.shift="show" @keyup.space="show">
+    </label>
+  </div>
+
+  <script>
+    const vm = new Vue({
+      data() {
+        return {
+          txt: '',
+        }
+      },
+      methods: {
+        show() {
+          alert(this.txt);
+          this.txt = '';
+        },
+      },
+    });
+    vm.$mount('#root');
+  </script>
+</body>
+</html>
