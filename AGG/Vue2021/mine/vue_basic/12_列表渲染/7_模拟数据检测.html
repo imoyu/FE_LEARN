@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    let data = {
+      name: 'n',
+      age: 12,
+    }
+
+    class Observer {
+      constructor(data) {
+        for (const key in data) {
+          Object.defineProperty(this, key, {
+            get() {
+              return data[key];
+            },
+            set(val) {
+              console.log(`${key} 被修改了 !!!!`);
+              data[key] = val;
+            },
+          })
+        }
+      }
+    }
+
+    const observer = new Observer(data);
+
+    let vm = {};
+    vm._data = data = observer;
+    
+  </script>
+</body>
+</html>

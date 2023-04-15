@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="../js/vue.js"></script>
+</head>
+<body>
+  <div>
+    <template v-if="a === 1">
+      <div>v-if</div>
+      <div>v-if</div>
+      <div>v-if</div>
+    </template>
+    <div v-show="b">
+      v-show
+    </div>
+    <button @click="toggle">切换</button>
+  </div>
+
+  <script>
+    new Vue({
+      el: 'body > div',
+      data: {
+        a: 1,
+        b: false,
+      },
+      methods: {
+        toggle() {
+          this.a = this.a * -1;
+          this.b = !this.b;
+        },
+      }
+    });
+  </script>
+</body>
+</html>

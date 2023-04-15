@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="../js/vue.js"></script>
+</head>
+<body>
+  <div id="root">
+    <h4>动态加入的字段，非响应数据:</h4>
+    {{ obj.name1 }}
+    <h4>Vue.set:</h4>
+    {{ obj.name2 }}
+    <h4>vue实例.$set:</h4>
+    {{ obj.name3 }}
+
+    <button @click="setValue1">赋值1</button>
+    <button @click="setValue2">赋值2</button>
+    <button @click="setValue3">赋值3</button>
+  </div>
+
+  <script>
+    const vm = new Vue({
+      el: '#root',
+      data() {
+        return {
+          obj: {},
+        };
+      },
+      methods: {
+        setValue1() {
+          this.obj.name1 = 'name 1 ...';
+        },
+        setValue2() {
+          this.$set(this.obj, 'name2', 'name 2 ...');
+        },
+        setValue3() {
+          Vue.set(this.obj, 'name3', 'name 3 ...');
+        },
+      }
+    });
+  </script>
+</body>
+</html>

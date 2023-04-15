@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="../js/vue.js"></script>
+</head>
+<body>
+  <div id="root">
+    <h2>今天天气：{{ weather }}</h2>
+    <!--  绑定两个方法时，分号隔开，带上圆括号  -->
+    <button @click="changeHot(); changeObj()">切换天气</button>
+  </div>
+  <script>
+    const vm = new Vue({
+      el: '#root',
+      data() {
+        return {
+          isHot: true,
+          obj: {
+            a: 1,
+          }
+        };
+      },
+      methods: {
+        changeHot() {
+          this.isHot = !this.isHot;
+        },
+        changeObj() {
+          this.obj.a++;
+        },
+      },
+      computed: {
+        weather: {
+          get() {
+            return this.isHot ? '炎热' : '凉爽';
+          },
+        }
+      },
+      watch: {
+        // isHot() {
+        //   console.log('天气被修改了');
+        // },
+        isHot: {
+          immediate: true,
+          handler(newValue, oldValue) {
+            console.log(oldValue + ' -> ' +newValue);
+          },
+        }
+      }
+    });
+    vm.$watch('obj', {
+      handler(newValue, oldValue) {
+        console.log('对象改变了 111');
+      }
+    });
+    vm.$watch('obj', {
+      deep: true,
+      handler(newValue, oldValue) {
+        console.log('对象改变了 222');
+      }
+    });
+  </script>
+</body>
+</html>
