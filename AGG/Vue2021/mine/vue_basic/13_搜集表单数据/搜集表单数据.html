@@ -6,12 +6,72 @@
   <script src="../js/vue.js"></script>
 </head>
 <body>
-  <div>
-    <form action="/hello">
-      <button type="button" @click="console.log(1111)">提交</button>
-      <input type="submit">
-      <input type="submit">
+  <div id="root">
+    <form @submit.prevent="logParams">
+      账号：<label><input type="text" v-model="userInfo.account"></label>
+      <br><br>
+      密码：<label><input type="password" v-model="userInfo.password"></label>
+      <br><br>
+      年龄：<label><input type="text" v-model="userInfo.age"></label>
+      <br><br>
+      性别：
+      男<label><input type="radio" name="sex" value="male" v-model="userInfo.sex"></label>
+      女<label><input type="radio" name="sex" value="female" v-model="userInfo.sex"></label>
+      <br><br>
+      爱好：
+      学习<label><input type="checkbox"  v-model="userInfo.hobbies"></label>
+      打游戏<label><input type="checkbox" value="game" v-model="userInfo.hobbies"></label>
+      吃饭<label><input type="checkbox" value="eat" v-model="userInfo.hobbies"></label>
+      <br><br>
+      所属校区
+      <label>
+        <select v-model="userInfo.city">
+          <option value="">请选择校区</option>
+          <option value="bj">北京</option>
+          <option value="sh">上海</option>
+          <option value="sz">深圳</option>
+          <option value="wh">武汉</option>
+        </select>
+      </label>
+      <br><br>
+      其它信息：
+      <label for="other-info"></label>
+      <textarea placeholder="请输入其它信息" name="" id="other-info" cols="30" rows="10" v-model="userInfo.other"></textarea>
+      <br><br>
+      <label><input type="checkbox" v-model="userInfo.agree"></label>
+      阅读并接受<a href="http://www.baidu.com">《用户协议》</a>
+      <button>提交</button>
     </form>
   </div>
+
+  <script>
+    new Vue({
+      el: '#root',
+      data: {
+        userInfo: {
+          account: '',
+          password: '',
+          age: undefined,
+          sex: 'female',
+          /*
+              - checkbox, v-model的初始值是非数组，那么收集的就是checked
+                并且多个 checkbox 会被同时选取
+              - v-model的初始值是数组，那么收集的的就是value组成的数组
+                如果初始值是数组，但是没有value值，接收到的值是[null],
+                例如去掉学习的 value 值，接收到的值是 ["game", "eat", null]
+          */
+          hobbies: [],
+          city: 'beijing',
+          other: '',
+          agree: '',
+        },
+      },
+      methods: {
+        logParams() {
+          console.log(JSON.stringify(this.userInfo));
+        },
+      }
+    });
+  </script>
 </body>
 </html>
