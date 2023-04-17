@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="../js/vue.js"></script>
+</head>
+<body>
+  <div>
+    <h4>v-pre</h4>
+    <div v-pre>n: {{ n }}</div>
+    <h4>normal</h4>
+    <div >n: {{ n }}</div>
+  </div>
+  <script>
+    new Vue({
+      el: 'body > div',
+      data() {
+        return {
+          n: 10,
+        };
+      },
+    });
+  </script>
+</body>
+</html>
