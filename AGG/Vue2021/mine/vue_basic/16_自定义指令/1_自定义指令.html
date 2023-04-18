@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="../js/vue.js"></script>
+</head>
+<body>
+  <div id="root">
+    <h4>原始值：</h4>
+    <div v-once>{{ n }}</div>
+    <h4>n 放大10倍：</h4>
+    <div v-big="n"></div>
+    <h4>v-fbind</h4>
+    <div>
+      <input type="text" v-fbind="msg">
+    </div>
+  </div>
+</body>
+<script>
+  // 全局指令：
+  Vue.directive('big2', (element, binding) => {
+      element.innerText = binding.value * 100;
+  });
+
+  new Vue({
+    el: '#root',
+    data: {
+      n: 11,
+      msg: '',
+    },
+    directives: {
+      // 多单词的名字：v-big-number
+      'big-number': function(element, binding) {
+
+      },
+      // 指令函数中的 this 是 windows
+      big(element, binding) {
+        element.innerText = binding.value * 10;
+      },
+      fbind: {
+        bind(element, binding) {
+          element.value = binding.value;
+        },
+        inserted(element, binding) {
+          element.focus();
+        },
+        update(element, binding) {
+          element.value = binding.value;
+        },
+        updated() {
+
+        },
+      }
+    }
+  });
+</script>
+</html>
