@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="../js/vue.js"></script>
+</head>
+<body>
+  <div id="root">
+    <h2 :style="{ opacity }">欢迎学习Vue</h2>
+  </div>
+  <script>
+    const vm = new Vue({
+      el: '#root',
+      data() {
+        return {
+          opacity: 0.2,
+        };
+      },
+      mounted() {
+        setInterval(() => {
+          this.opacity -= 0.01;
+          if (this.opacity <= 0) {
+            this.opacity = 1;
+          }
+        }, 1000);
+      },
+    });
+    // setInterval(() => {
+    //   vm.opacity -= 0.01;
+    //   if (vm.opacity <= 0) {
+    //     vm.opacity = 1;
+    //   }
+    // }, 16);
+  </script>
+</body>
+</html>

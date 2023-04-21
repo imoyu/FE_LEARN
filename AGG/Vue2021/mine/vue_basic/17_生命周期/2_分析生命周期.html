@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="../js/vue.js"></script>
+</head>
+<body>
+  <div id="root">
+    <h2>当前的n值是：{{ n }}</h2>
+  </div>
+  <script>
+    const vm = new Vue({
+      el: '#root',
+      data() {
+        return {
+          n: 11,
+        };
+      },
+      // data, method等未初始化
+      beforeCreate() {
+        console.log('beforeCreate');
+        console.log(this.n);// undefined
+      },
+      // 数据，方法已初始化
+      created() {
+        console.log('created');
+        console.log(this.n);// 11
+      },
+      // 虚拟dom未挂载到页面
+      beforeMount() {
+        console.log('beforeMount');
+        // 这里的修改最终会被虚拟dom覆盖
+        document.querySelector('div > h2').innerText = 'hahaha';
+      },
+      mounted() {
+        console.log('mounted');
+        // 修改生效，但是不推荐直接操作dom
+        // document.querySelector('div > h2').innerText = 'hahaha';
+      },
+      beforeUpdate() {
+
+      },
+      updated() {
+
+      },
+      beforeDestroy() {
+
+      },
+      destroy() {
+
+      },
+    });
+  </script>
+</body>
+</html>
