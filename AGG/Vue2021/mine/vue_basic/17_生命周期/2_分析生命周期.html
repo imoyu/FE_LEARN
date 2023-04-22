@@ -6,19 +6,38 @@
   <script src="../js/vue.js"></script>
 </head>
 <body>
-  <div id="root">
+  <div id="root" :x="n">
     <h2>当前的n值是：{{ n }}</h2>
+    <button @click="plusOne">n+1</button>
   </div>
   <script>
     const vm = new Vue({
       el: '#root',
+      // 有 template 时优先解析 template，并且完全替代上面的 div
+      // template: `
+      //     <div :y="n">
+      //       <h2>当前的n值是：{{ n }}</h2>
+      //     </div>
+      // `,
       data() {
         return {
           n: 11,
         };
       },
+      methods: {
+        plusOne() {
+          this.n++;
+        },
+      },
+      watch: {
+        n: {
+          handler(newValue, oldValue) {
+            console.log(oldValue + ' -> ' + newValue);
+          },
+        }
+      },
       // data, method等未初始化
-      beforeCreate() {
+          beforeCreate() {
         console.log('beforeCreate');
         console.log(this.n);// undefined
       },
@@ -38,15 +57,23 @@
         // 修改生效，但是不推荐直接操作dom
         // document.querySelector('div > h2').innerText = 'hahaha';
       },
+      // watch -> before -> updated
+      // 数据已更新，页面未更新
       beforeUpdate() {
-
+        console.log(this.n);
+        console.log('beforeUpdate');
       },
+      // 数据、页面都更新
       updated() {
-
+        console.log(this.n);
+        console.log('update');
       },
+      // 最后能使用vm的阶段
+      // 对数据的修改不触发更新
       beforeDestroy() {
 
       },
+      // 没啥用
       destroy() {
 
       },

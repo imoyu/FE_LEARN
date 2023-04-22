@@ -8,6 +8,7 @@
 <body>
   <div id="root">
     <h2 :style="{ opacity }">欢迎学习Vue</h2>
+    <button @click="stop">停止</button>
   </div>
   <script>
     const vm = new Vue({
@@ -17,21 +18,23 @@
           opacity: 0.2,
         };
       },
+      methods: {
+        stop() {
+          clearInterval(this.timer);
+        },
+      },
       mounted() {
-        setInterval(() => {
+        this.timer = setInterval(() => {
           this.opacity -= 0.01;
           if (this.opacity <= 0) {
             this.opacity = 1;
           }
         }, 16);
       },
+      beforeDestroy() {
+        clearInterval(this.timer);
+      },
     });
-    // setInterval(() => {
-    //   vm.opacity -= 0.01;
-    //   if (vm.opacity <= 0) {
-    //     vm.opacity = 1;
-    //   }
-    // }, 16);
   </script>
 </body>
 </html>
