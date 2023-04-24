@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="../js/vue.js"></script>
+</head>
+<body>
+  <div id="root">
+    <hello></hello>
+    <school></school>
+    <hr>
+    <student></student>
+  </div>
+
+  <div id="root2">
+    <hello></hello>
+  </div>
+
+  <script>
+    const school = Vue.extend({
+      template: `
+        <div>
+          <div>学校名称：{{ schoolName }}</div>
+          <div>学校地址：{{ address }}</div>
+        </div>
+      `,
+      data() {
+        return {
+          schoolName: '尚硅谷',
+          address: '北京昌平',
+        };
+      },
+    });
+
+    const student = Vue.extend({
+      template: `
+        <div>
+          <div>学生姓名：{{ studentName }}</div>
+          <div>学生年龄：{{ age }}</div>
+        </div>
+      `,
+      data() {
+        return {
+          studentName: '张三',
+          age: 18,
+        };
+      },
+    });
+
+    const hello = Vue.extend({
+      template: `
+        <div>
+          <h3>{{ msg }}</h3>
+        </div>
+      `,
+      data() {
+        return {
+          msg: 'Hello !!!',
+        };
+      },
+    });
+
+    Vue.component('hello', hello);
+
+    new Vue({
+      el: '#root',
+      data() {
+        return {};
+      },
+      components: {
+        school,
+        student,
+      },
+    });
+
+    new Vue({
+      el: '#root2',
+    });
+  </script>
+</body>
+</html>
