@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="../js/vue.js"></script>
+</head>
+<body>
+  <div id="root">
+    <!--  最终翻译为 student-a  -->
+    <stuDent-A></stuDent-A>
+  </div>
+
+  <script>
+    const studentA = Vue.extend({
+      // 这里可以配置 Vue 开发者工具中的名字
+      // 未配置是取标签的驼峰翻译：StudentA
+      name: 'XSpace',
+      template: `
+        <div>
+          <h3>名字：{{ name }}</h3>
+          <h3>年龄：{{ age }}</h3>
+        </div>
+      `,
+      data() {
+        return {
+          name: 'xiaoMing',
+          age: 17,
+        }
+      },
+    });
+    const vm = new Vue({
+      el: '#root',
+      components: {
+        // 1. 标签名总是翻译为小写，因此这里要么首字母大写，要么全小写
+        // Student: student
+        // 2. 多个单词时驼峰（仅限脚手架）或者 - 连接小写字母，
+        'student-a': studentA
+      }
+    });
+  </script>
+
+</body>
+</html>
