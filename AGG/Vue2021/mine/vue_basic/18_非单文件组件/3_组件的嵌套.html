@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="../js/vue.js"></script>
+</head>
+<body>
+
+  <!--  这个 div 会被彻底替换  -->
+  <div id="root"></div>
+
+  <script>
+    const student = Vue.extend({
+      template: `
+        <div stu>
+          <h4>学生姓名: {{ name }}</h4>
+          <h4>学生年龄: {{ age }}</h4>
+        </div>
+      `,
+      data() {
+        return {
+          name: 'Eren Yeager',
+          age: 13,
+        };
+      },
+    });
+
+    const school = Vue.extend({
+      template: `
+        <div sch>
+          <h4>学校名字: {{ name }}</h4>
+          <hr>
+          <student></student>
+        </div>
+      `,
+      data() {
+        return {
+          name: 'XXXX School',
+        };
+      },
+      components: {
+        student
+      }
+    });
+
+    const hello = Vue.extend({
+      template: `
+        <div hel>
+          <h2>Hello !!!</h2>
+        </div>
+      `,
+    });
+
+    const app = Vue.extend({
+      template: `
+        <div app>
+          <hello></hello>
+          <school></school>
+        </div>
+      `,
+      components: {
+        hello,
+        school,
+      }
+    });
+
+    const vm = new Vue({
+      el: '#root',
+      template: `
+        <app></app>
+      `,
+      components: {
+        app,
+      }
+    });
+
+  </script>
+</body>
+</html>
