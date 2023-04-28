@@ -32,9 +32,10 @@
     const vm = new Vue({
       el: '#root',
       components: {
+        // 这里的 key 值与上面的标签名保持一致
         // 1. 标签名总是翻译为小写，因此这里要么首字母大写，要么全小写
         // Student: student
-        // 2. 多个单词时驼峰（仅限脚手架）或者 - 连接小写字母，
+        // 2. 多个单词时驼峰（仅限脚手架）或者 - 连接小写字母
         'student-a': studentA
       }
     });
