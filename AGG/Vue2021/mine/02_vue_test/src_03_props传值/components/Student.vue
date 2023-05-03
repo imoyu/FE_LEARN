@@ -36,7 +36,7 @@ export default {
   },
   methods: {
     add() {
-      // props 的值不能直接修改
+      // props 的值不能直接修改，需要复制一份再使用
       this.ageCopy++;
     },
   }
